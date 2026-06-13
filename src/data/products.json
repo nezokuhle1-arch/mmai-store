@@ -1,0 +1,94 @@
+[
+  {
+    "id": "hoodie-001",
+    "handle": "oversized-identity-hoodie",
+    "title": "Oversized Identity Hoodie",
+    "category": "Tops",
+    "price": 1200,
+    "currency": "ZAR",
+    "isLimitedDrop": true,
+    "stockCount": 7,
+    "description": "A heavyweight, oversized pullover hoodie built for identity. Recycled polyester-cotton blend with custom text inserts, embroidery zones, and barcode ID label at the collar. Made in South Africa.",
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+    "tags": ["Recycled Cotton", "Made in SA", "Limited Drop", "Customizable"],
+    "customization": {
+      "nameBadge": { "enabled": true, "maxLength": 20 },
+      "quote": { "enabled": true, "maxLength": 40 },
+      "placement": {
+        "enabled": true,
+        "options": ["Front chest", "Back centre", "Left sleeve", "Collar tag"]
+      },
+      "barcodeId": { "enabled": true }
+    },
+    "image": "/assets/products/hoodie-001.jpg"
+  },
+  {
+    "id": "cargo-001",
+    "handle": "utility-cargo-pants",
+    "title": "Utility Cargo Pants",
+    "category": "Bottoms",
+    "price": 950,
+    "currency": "ZAR",
+    "isLimitedDrop": false,
+    "stockCount": 12,
+    "description": "Multi-pocket utility cargo pants with adjustable detailing and functional tailoring. Built for movement, designed for identity.",
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+    "tags": ["Made in SA", "Customizable"],
+    "customization": {
+      "nameBadge": { "enabled": true, "maxLength": 20 },
+      "quote": { "enabled": false, "maxLength": 0 },
+      "placement": {
+        "enabled": true,
+        "options": ["Left thigh", "Back pocket", "Ankle cuff"]
+      },
+      "barcodeId": { "enabled": true }
+    },
+    "image": "/assets/products/cargo-001.jpg"
+  },
+  {
+    "id": "tee-001",
+    "handle": "graphic-identity-tee",
+    "title": "Graphic Identity Tee",
+    "category": "Tops",
+    "price": 750,
+    "currency": "ZAR",
+    "isLimitedDrop": false,
+    "stockCount": -1,
+    "description": "Afro-futurist typography meets minimalist art. A modular print tee designed to carry your name, your words, your identity.",
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+    "tags": ["Made in SA", "New", "Customizable"],
+    "customization": {
+      "nameBadge": { "enabled": true, "maxLength": 20 },
+      "quote": { "enabled": true, "maxLength": 40 },
+      "placement": {
+        "enabled": true,
+        "options": ["Front chest", "Back centre"]
+      },
+      "barcodeId": { "enabled": true }
+    },
+    "image": "/assets/products/tee-001.jpg"
+  },
+  {
+    "id": "coat-001",
+    "handle": "oversized-statement-coat",
+    "title": "Oversized Statement Coat",
+    "category": "Outerwear",
+    "price": 2500,
+    "currency": "ZAR",
+    "isLimitedDrop": true,
+    "stockCount": 3,
+    "description": "Structured silhouette, layered fabrics, stitched symbolism. The MMAI coat is a wearable statement — built for those who lead.",
+    "sizes": ["S", "M", "L", "XL"],
+    "tags": ["Made in SA", "Limited Drop", "Customizable"],
+    "customization": {
+      "nameBadge": { "enabled": true, "maxLength": 20 },
+      "quote": { "enabled": true, "maxLength": 60 },
+      "placement": {
+        "enabled": true,
+        "options": ["Back centre", "Left sleeve", "Inner lining"]
+      },
+      "barcodeId": { "enabled": true }
+    },
+    "image": "/assets/products/coat-001.jpg"
+  }
+]

@@ -1,0 +1,53 @@
+/* ============================================================
+   MMAI — TYPOGRAPHY
+   Playfair Display (display) · DM Sans (body/UI) · DM Mono (identity)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap');
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: var(--fs-3xl); }
+h2 { font-size: var(--fs-2xl); }
+h3 { font-size: var(--fs-xl); }
+h4 { font-size: var(--fs-md); }
+
+p {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: var(--lh-normal);
+  color: var(--color-text-muted);
+}
+
+/* Eyebrow / label text — used above headings, on buttons, nav */
+.label,
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
+/* Identity / barcode text */
+.identity-text,
+.barcode {
+  font-family: var(--font-mono);
+  letter-spacing: var(--ls-mid);
+}
+
+/* Editorial / quote text */
+.editorial {
+  font-family: var(--font-display);
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  h1 { font-size: var(--fs-2xl); }
+  h2 { font-size: var(--fs-xl); }
+  h3 { font-size: var(--fs-lg); }
+}
