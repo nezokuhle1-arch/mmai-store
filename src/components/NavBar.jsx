@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import DrawerMenu from './DrawerMenu';
 import './NavBar.css';
 
 /* ============================================================
@@ -16,14 +17,13 @@ export default function NavBar() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
   const isHome = location.pathname === '/';
 
   const handleMenuClick = () => {
-    setMenuOpen((open) => !open);
-    console.log('menu toggled');
+    setIsDrawerOpen(true);
   };
 
   const handleSearchKeyDown = (e) => {
@@ -69,6 +69,8 @@ export default function NavBar() {
           </Link>
         </div>
       </div>
+
+      <DrawerMenu isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} />
     </nav>
   );
 }
