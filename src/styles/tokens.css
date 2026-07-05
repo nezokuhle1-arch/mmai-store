@@ -1,77 +1,122 @@
 /* ============================================================
    MMAI — DESIGN TOKENS
-   Palette: Slate Noir (Option B)
-   "Cooler and more editorial. Near-blacks with a navy undertone."
-   No accent color — contrast & inversion drive hierarchy.
+   Palette: Dark Nude (terracotta/nude spectrum)
+
+   STRUCTURE:
+   - Nav + Footer ONLY use --color-nude-primary as background
+   - Body + Hero use --color-offwhite throughout (dominant)
+   - Nav wordmark ("MMAI.") uses BLACK — a deliberate bold stamp
+   - Nav icons/links/footer copy use warm off-white (legible,
+     passes contrast at small sizes — black fails WCAG AA here)
+   - CTA buttons use the nude primary against off-white sections
+
+   Chosen over Slate Noir / Dusty Blue / Powder Blue because it's
+   the only option that reinforces "Made in South Africa, rooted
+   in African identity" through color alone — and holds both
+   "rebellion" and "elegance" from the brand brief, unlike the
+   softer DECEC4-primary variant which leaned too far toward
+   quiet/decorative and lost the rebellious edge.
    ============================================================ */
 
-:root {
-  /* ---------- COLOUR PALETTE — SLATE NOIR ---------- */
-  --color-offwhite:   #EDEDEB;  /* page backgrounds, light surfaces      */
-  --color-steel:      #B0B4BC;  /* borders, dividers, secondary text     */
-  --color-slate:      #6A7180;  /* muted UI, placeholders, disabled      */
-  --color-navy-mid:   #2E3344;  /* hover states, cards on dark surfaces  */
-  --color-navy-deep:  #171C2B;  /* primary dark backgrounds (hero, nav)  */
-  --color-void:       #09090F;  /* deepest contrast, CTAs, active states */
-
-  /* ---------- SEMANTIC ALIASES ---------- */
-  --color-bg:            var(--color-offwhite);
-  --color-bg-inverse:    var(--color-navy-deep);
-  --color-surface:       #FFFFFF;
-  --color-surface-dark:  var(--color-navy-mid);
-
-  --color-text:          var(--color-void);
-  --color-text-muted:    var(--color-slate);
-  --color-text-inverse:  var(--color-offwhite);
-  --color-text-inverse-muted: var(--color-steel);
-
-  --color-border:        var(--color-steel);
-  --color-border-dark:   var(--color-navy-mid);
-
-  --color-cta-bg:        var(--color-void);
-  --color-cta-text:      var(--color-offwhite);
-  --color-cta-bg-inverse: var(--color-offwhite);
-  --color-cta-text-inverse: var(--color-void);
-
-  /* ---------- TYPOGRAPHY ---------- */
-  --font-display: 'Playfair Display', serif;   /* headlines, drop titles      */
-  --font-body:    'DM Sans', sans-serif;        /* UI, prices, nav, body text  */
-  --font-mono:    'DM Mono', monospace;         /* barcodes, IDs, identity tags*/
-
-  --fs-xs:   11px;
-  --fs-sm:   13px;
-  --fs-base: 15px;
-  --fs-md:   18px;
-  --fs-lg:   24px;
-  --fs-xl:   32px;
-  --fs-2xl:  48px;
-  --fs-3xl:  64px;
-
-  --lh-tight:  1.1;
-  --lh-snug:   1.3;
-  --lh-normal: 1.6;
-  --lh-loose:  1.8;
-
-  --ls-wide: 0.16em;
-  --ls-mid:  0.08em;
-
-  /* ---------- SPACING SCALE ---------- */
-  --space-xs:  4px;
-  --space-sm:  8px;
-  --space-md:  16px;
-  --space-lg:  32px;
-  --space-xl:  64px;
-  --space-2xl: 128px;
-
-  /* ---------- LAYOUT ---------- */
-  --max-width: 1280px;
-  --gutter: clamp(16px, 4vw, 48px);
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-
-  /* ---------- TRANSITIONS ---------- */
-  --transition-fast: 0.15s ease;
-  --transition-base: 0.25s ease;
-  --transition-slow: 0.4s ease;
-}
+   :root {
+    /* ---------- COLOUR PALETTE — DARK NUDE ---------- */
+    --color-nude-lightest: #F0E9E3;  /* rarely used — lightest spectrum stop  */
+    --color-nude-light:    #DECEC4;  /* rarely used — soft secondary surface  */
+    --color-nude-mid:      #BA9882;  /* rarely used — mid-tone accent option  */
+    --color-nude-primary:  #8A644C;  /* PRIMARY — nav + footer background     */
+    --color-nude-deep:     #6E4E3A;  /* darker variant — hover/active states  */
+    --color-nude-darkest:  #4A362A;  /* announcement bar background           */
+  
+    --color-offwhite:      #FAFAF7;  /* body + hero background — dominant     */
+    --color-warm-white:    #F4EDE6;  /* nav/footer text — icons, links, copy  */
+    --color-black:         #111111;  /* nav wordmark ONLY — bold logo stamp   */
+  
+    --color-steel:         #B0B4BC;  /* borders, dividers on light surfaces   */
+    --color-slate:         #6A7180;  /* muted body text, placeholders         */
+  
+    /* ---------- SEMANTIC ALIASES ---------- */
+    --color-bg:               var(--color-offwhite);
+    --color-bg-inverse:       var(--color-nude-primary);
+    --color-surface:          #FFFFFF;
+    --color-surface-dark:     var(--color-nude-deep);
+  
+    --color-text:             #111111;
+    --color-text-muted:       var(--color-slate);
+    --color-text-inverse:     var(--color-warm-white);  /* nav/footer icons, links, copy */
+    --color-text-logo:        var(--color-black);       /* nav wordmark ONLY — never use for icons/links */
+  
+    --color-border:           var(--color-steel);
+    --color-border-dark:      var(--color-nude-deep);
+    --color-border-nav:       #C7B4A6;  /* separates nav/footer from off-white body when they'd otherwise blend */
+  
+    --color-cta-bg:           var(--color-nude-primary);
+    --color-cta-text:         var(--color-warm-white);
+    --color-cta-bg-inverse:   var(--color-offwhite);
+    --color-cta-text-inverse: var(--color-nude-primary);
+  
+    /* ---------- TYPOGRAPHY ---------- */
+    --font-display: 'Playfair Display', serif;   /* headlines, drop titles, nav wordmark */
+    --font-body:    'DM Sans', sans-serif;        /* UI, prices, nav links, body text     */
+    --font-mono:    'DM Mono', monospace;         /* barcodes, IDs, eyebrows, prices       */
+  
+    --fs-xs:   11px;
+    --fs-sm:   13px;
+    --fs-base: 15px;
+    --fs-md:   18px;
+    --fs-lg:   24px;
+    --fs-xl:   32px;
+    --fs-2xl:  48px;
+    --fs-3xl:  64px;
+  
+    --lh-tight:  1.1;
+    --lh-snug:   1.3;
+    --lh-normal: 1.6;
+    --lh-loose:  1.8;
+  
+    --ls-wide: 0.16em;
+    --ls-mid:  0.08em;
+  
+    /* ---------- SPACING SCALE ---------- */
+    --space-xs:  4px;
+    --space-sm:  8px;
+    --space-md:  16px;
+    --space-lg:  32px;
+    --space-xl:  64px;
+    --space-2xl: 128px;
+  
+    /* ---------- LAYOUT ---------- */
+    --max-width: 1280px;
+    --gutter: clamp(16px, 4vw, 48px);
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+  
+    /* ---------- TRANSITIONS ---------- */
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.25s ease;
+    --transition-slow: 0.4s ease;
+  }
+  
+  /* ============================================================
+     USAGE RULES — enforce in every component
+     ============================================================
+     1. Nav background:      var(--color-nude-primary)
+        Nav wordmark:        var(--color-text-logo)   [black, bold]
+        Nav icons/links:     var(--color-text-inverse) [warm off-white]
+        Announcement bar bg: var(--color-nude-darkest)
+  
+     2. Footer background:   var(--color-nude-primary)
+        Footer text:         var(--color-text-inverse) [warm off-white]
+  
+     3. Hero background:     var(--color-bg) [off-white — NOT nude]
+        Hero text:           var(--color-text) [black]
+        Hero CTA:            background var(--color-cta-bg),
+                              color var(--color-cta-text)
+  
+     4. Body / product sections background: var(--color-bg) [off-white]
+  
+     5. If nav/footer sit directly adjacent to an off-white section
+        with no image between them, add border-bottom / border-top:
+        1px solid var(--color-border-nav) to keep them visually
+        distinct from the body background.
+     ============================================================ */
