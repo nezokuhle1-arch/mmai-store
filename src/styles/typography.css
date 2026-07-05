@@ -3,10 +3,10 @@
    Playfair Display (display) · DM Sans (body/UI) · DM Mono (identity)
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500&family=DM+Mono:wght@400;500&family=Inter:wght@400;500&family=Fraunces:wght@500;600;700&display=swap');
 
 h1, h2, h3, h4 {
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   font-weight: 700;
   line-height: var(--lh-tight);
   letter-spacing: -0.01em;
@@ -18,7 +18,7 @@ h3 { font-size: var(--fs-xl); }
 h4 { font-size: var(--fs-md); }
 
 p {
-  font-family: var(--font-body);
+  font-family: var(--font-alt-body);
   font-size: var(--fs-base);
   line-height: var(--lh-normal);
   color: var(--color-text-muted);
@@ -42,7 +42,7 @@ p {
 
 /* Editorial / quote text */
 .editorial {
-  font-family: var(--font-display);
+  font-family: var(--font-heading);
   font-style: italic;
 }
 

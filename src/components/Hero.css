@@ -1,0 +1,76 @@
+.hero {
+  position: relative;
+  min-height: 90vh;
+  overflow: hidden;
+  /* TODO: replace with real campaign photography via background-image or an <img> tag */
+  background: linear-gradient(160deg, #8a8378 0%, #5f5a52 55%, #4a4640 100%);
+}
+
+.hero__gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 35%;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero__content {
+  position: absolute;
+  bottom: 48px;
+  left: var(--gutter);
+  z-index: 2;
+  max-width: 380px;
+}
+
+.hero__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-warm-white);
+  opacity: 0.9;
+  margin-bottom: 12px;
+}
+
+.hero__headline {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-style: normal;
+  font-size: clamp(32px, 6vw, 48px);
+  line-height: 1.05;
+  color: var(--color-warm-white);
+  margin-bottom: 20px;
+  letter-spacing: normal;
+}
+
+.hero__cta {
+  background: transparent;
+  border: 1px solid var(--color-warm-white);
+  color: var(--color-warm-white);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.hero__cta:hover {
+  background: var(--color-warm-white);
+  color: var(--color-nude-primary);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 500px;
+  }
+
+  .hero__content {
+    bottom: 32px;
+  }
+}

@@ -55,9 +55,11 @@
     --color-cta-text-inverse: var(--color-nude-primary);
   
     /* ---------- TYPOGRAPHY ---------- */
-    --font-display: 'Playfair Display', serif;   /* headlines, drop titles, nav wordmark */
-    --font-body:    'DM Sans', sans-serif;        /* UI, prices, nav links, body text     */
-    --font-mono:    'DM Mono', monospace;         /* barcodes, IDs, eyebrows, prices       */
+    --font-display:  'Playfair Display', serif;  /* NAV WORDMARK ONLY — "MMAI." — nowhere else */
+    --font-heading:  'Fraunces', serif;           /* section headings, hero headline, product titles */
+    --font-body:     'DM Sans', sans-serif;       /* UI, prices, nav links, buttons        */
+    --font-alt-body: 'Inter', sans-serif;         /* paragraph / body copy, descriptions   */
+    --font-mono:     'DM Mono', monospace;        /* barcodes, IDs, eyebrows, prices        */
   
     --fs-xs:   11px;
     --fs-sm:   13px;
@@ -95,8 +97,20 @@
     --transition-fast: 0.15s ease;
     --transition-base: 0.25s ease;
     --transition-slow: 0.4s ease;
+
+    /* ---------- FIXED OVERLAY HEIGHTS ----------
+       Shared by AnnouncementBar / NavBar (both fixed/pinned)
+       and by the .page-content--offset spacer in App.css. */
+    --announcement-bar-height: 36px;
+    --navbar-height: 176px;
   }
-  
+
+  @media (max-width: 768px) {
+    :root {
+      --navbar-height: 96px;
+    }
+  }
+
   /* ============================================================
      USAGE RULES — enforce in every component
      ============================================================

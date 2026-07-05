@@ -1,0 +1,3 @@
+.page-content--offset {
+  padding-top: calc(var(--announcement-bar-height) + var(--navbar-height));
+}
