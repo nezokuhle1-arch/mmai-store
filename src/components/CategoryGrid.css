@@ -1,0 +1,89 @@
+.category-grid__header {
+  background: var(--color-offwhite);
+  padding: var(--space-lg) var(--gutter) 0 var(--gutter);
+}
+
+.category-grid__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-slate);
+  margin-bottom: 8px;
+}
+
+.category-grid__title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 28px;
+  color: var(--color-black);
+  margin-bottom: var(--space-md);
+}
+
+.category-grid__tiles {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2px;
+  background: var(--color-nude-light);
+}
+
+.category-grid__tile {
+  aspect-ratio: 3 / 4;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.category-grid__tile:hover {
+  transform: scale(1.03);
+}
+
+.category-grid__tile--hoodies {
+  background: linear-gradient(135deg, #8a8378 0%, #5f5a52 100%);
+}
+
+.category-grid__tile--cargo-pants {
+  background: linear-gradient(135deg, #7a7268 0%, #4f4a42 100%);
+}
+
+.category-grid__tile--graphic-tees {
+  background: linear-gradient(135deg, #948c7e 0%, #625c50 100%);
+}
+
+.category-grid__tile--coats {
+  background: linear-gradient(135deg, #6e4e3a 0%, #4a362a 100%);
+}
+
+.category-grid__tile--accessories {
+  background: linear-gradient(135deg, #857d70 0%, #57524a 100%);
+}
+
+.category-grid__label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 16px;
+  background: linear-gradient(transparent, rgba(9, 9, 15, 0.55));
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-warm-white);
+}
+
+@media (max-width: 768px) {
+  .category-grid__header {
+    padding: var(--space-md) var(--gutter) 0 var(--gutter);
+  }
+
+  .category-grid__title {
+    font-size: 22px;
+  }
+
+  .category-grid__tiles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
