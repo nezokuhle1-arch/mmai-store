@@ -1,0 +1,114 @@
+.bestsellers-strip {
+  background: var(--color-offwhite);
+  padding: var(--space-lg) var(--gutter);
+}
+
+.bestsellers-strip__eyebrow-row,
+.bestsellers-strip__title-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bestsellers-strip__eyebrow-row {
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.bestsellers-strip__eyebrow {
+  color: var(--color-slate);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.bestsellers-strip__filter {
+  padding: 4px 7px;
+  background: var(--color-nude-lightest);
+  color: var(--color-nude-deep);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.bestsellers-strip__title-row {
+  align-items: baseline;
+}
+
+.bestsellers-strip__title {
+  color: var(--color-black);
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.bestsellers-strip__view-all {
+  color: var(--color-slate);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.bestsellers-strip__view-all:hover {
+  color: var(--color-black);
+}
+
+.bestsellers-strip__rail-viewport {
+  margin: var(--space-md) calc(-1 * var(--gutter)) 0;
+  padding: 0 var(--gutter);
+  overflow: hidden;
+}
+
+.bestsellers-strip__track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 260px;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 8px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.bestsellers-strip__track::-webkit-scrollbar {
+  display: none;
+}
+
+.bestsellers-strip__card {
+  scroll-snap-align: start;
+}
+
+.bestsellers-strip__dashes {
+  display: flex;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.bestsellers-strip__dash {
+  width: 18px;
+  height: 1px;
+  background: var(--color-steel);
+  transition: background 0.2s ease, height 0.2s ease;
+}
+
+.bestsellers-strip__dash--active {
+  background: var(--color-nude-primary);
+  height: 2px;
+}
+
+@media (max-width: 768px) {
+  .bestsellers-strip {
+    padding: var(--space-md) var(--gutter);
+  }
+
+  .bestsellers-strip__title {
+    font-size: 22px;
+  }
+
+  .bestsellers-strip__track {
+    grid-auto-columns: 220px;
+  }
+}
