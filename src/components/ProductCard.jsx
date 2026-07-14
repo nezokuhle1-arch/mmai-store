@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useRef, useState } from 'react';
+import QuickAddPopover from './QuickAddPopover';
 import './ProductCard.css';
 
 /* ============================================================
@@ -6,59 +8,71 @@ import './ProductCard.css';
    Shared product presentation used by homepage product sections.
    ============================================================ */
 
-export default function ProductCard({ product, gender, onAddToCart, onCustomize }) {
+export default function ProductCard({ product, gender }) {
+  const navigate = useNavigate();
+  const [isPopoverOpen, setIsPopoverOpen] = useState(false);
+  const plusButtonRef = useRef(null);
+
   const productLink = `/product/${product.handle}`;
   const customizeLink = gender
     ? `/customize?product=${product.handle}&gender=${gender}`
     : `/customize?product=${product.handle}`;
 
-  const stockLabel =
-    product.stockCount < 0
-      ? 'Made to order'
-      : product.stockCount <= 5
-        ? `${product.stockCount} left`
-        : product.isLimitedDrop
-          ? 'Limited drop'
-          : null;
+  const statusLabel = product.isLimitedDrop
+    ? 'Limited'
+    : product.stockCount >= 0 && product.stockCount <= 5
+      ? `${product.stockCount} Left`
+      : null;
+
+  const handleCardClick = () => {
+    navigate(productLink);
+  };
+
+  const handlePlusClick = (event) => {
+    event.stopPropagation();
+    event.preventDefault();
+    setIsPopoverOpen(true);
+  };
+
+  const handleCustomizeClick = (event) => {
+    event.stopPropagation();
+    event.preventDefault();
+    navigate(customizeLink);
+  };
 
   return (
-    <article className="product-card">
-      <Link
-        to={productLink}
+    <article
+      className={`product-card${isPopoverOpen ? ' product-card--popover-open' : ''}`}
+      onClick={handleCardClick}
+    >
+      <div
         className={`product-card__visual product-card__visual--${product.category.toLowerCase()}`}
-        aria-label={`View ${product.title}`}
       >
-        {stockLabel && <span className="product-card__badge">{stockLabel}</span>}
-        <span className="product-card__monogram" aria-hidden="true">
-          MMAI.
-        </span>
-      </Link>
+        {statusLabel && <span className="product-card__status">{statusLabel}</span>}
+        <button
+          type="button"
+          ref={plusButtonRef}
+          className="product-card__quick-add"
+          onClick={handlePlusClick}
+          aria-label={`Quick add ${product.title}`}
+        >
+          +
+        </button>
+        <QuickAddPopover
+          product={product}
+          anchorRef={plusButtonRef}
+          isOpen={isPopoverOpen}
+          onClose={() => setIsPopoverOpen(false)}
+        />
+      </div>
 
       <div className="product-card__details">
         <p className="product-card__category">{product.category}</p>
-        <Link to={productLink} className="product-card__title">
-          {product.title}
-        </Link>
-        <p className="product-card__price">
-          {product.currency === 'ZAR' ? 'R' : product.currency} {product.price.toLocaleString()}
+        <p className="product-card__title">{product.title}</p>
+        <p className="product-card__price">R {product.price.toLocaleString()}</p>
+        <p className="product-card__customize" onClick={handleCustomizeClick}>
+          Customize →
         </p>
-
-        <div className="product-card__actions">
-          <button
-            type="button"
-            className="product-card__action product-card__action--primary"
-            onClick={() => onAddToCart(product)}
-          >
-            Add to Cart
-          </button>
-          <Link
-            to={customizeLink}
-            className="product-card__action"
-            onClick={(event) => onCustomize?.(product, event, customizeLink)}
-          >
-            Customize
-          </Link>
-        </div>
       </div>
     </article>
   );

@@ -1,0 +1,118 @@
+.quick-add-popover__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: rgba(23, 20, 18, 0.35);
+  backdrop-filter: blur(3px);
+}
+
+.quick-add-popover {
+  position: fixed;
+  z-index: 95;
+  width: 200px;
+  background: var(--color-offwhite);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+}
+
+.quick-add-popover--closing {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.quick-add-popover__title {
+  margin-bottom: 12px;
+  color: var(--color-black);
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.quick-add-popover__label {
+  margin-bottom: 6px;
+  color: var(--color-slate);
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.quick-add-popover__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.quick-add-popover__chip {
+  border: 1px solid var(--color-steel);
+  background: transparent;
+  padding: 5px 10px;
+  color: var(--color-black);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 9px;
+}
+
+.quick-add-popover__chip--selected {
+  border-color: var(--color-black);
+  background: var(--color-black);
+  color: var(--color-offwhite);
+}
+
+.quick-add-popover__status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 0;
+}
+
+.quick-add-popover__spinner {
+  width: 22px;
+  height: 22px;
+  border: 1.5px solid #e5dfd6;
+  border-top-color: var(--color-nude-primary);
+  border-radius: 50%;
+  animation: quick-add-popover-spin 0.9s linear infinite;
+}
+
+@keyframes quick-add-popover-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.quick-add-popover__status-text {
+  color: var(--color-slate);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.quick-add-popover__status-text--confirmed {
+  color: #6e8c73;
+}
+
+.quick-add-popover__check {
+  display: flex;
+  width: 26px;
+  height: 26px;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #8ca890;
+  border-radius: 50%;
+  color: #6e8c73;
+  font-size: 13px;
+}
+
+.quick-add-popover__subline {
+  margin-top: 2px;
+  color: var(--color-black);
+  font-family: var(--font-heading);
+  font-size: 12px;
+}

@@ -11,7 +11,7 @@ import './ProductGrid.css';
    shown as a horizontal drag-scroll rail.
    ============================================================ */
 
-export default function ProductGrid({ onAddToCart, onCustomize }) {
+export default function ProductGrid() {
   const { activeDrop, loading } = useDrop();
   const [gender] = useSessionGenderFilter();
   const shopLink = gender ? `/shop?drop=001&gender=${gender}` : '/shop?drop=001';
@@ -36,12 +36,7 @@ export default function ProductGrid({ onAddToCart, onCustomize }) {
         <div className="product-grid__track" ref={trackRef}>
           {products.map((product) => (
             <div key={product.id} className="product-grid__card">
-              <ProductCard
-                product={product}
-                gender={gender}
-                onAddToCart={onAddToCart}
-                onCustomize={onCustomize}
-              />
+              <ProductCard product={product} gender={gender} />
             </div>
           ))}
         </div>

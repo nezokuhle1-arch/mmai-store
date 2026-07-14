@@ -10,7 +10,7 @@ import './BestsellersStrip.css';
    Fan favorites on HomePage, shown as a horizontal drag-scroll rail.
    ============================================================ */
 
-export default function BestsellersStrip({ onAddToCart, onCustomize }) {
+export default function BestsellersStrip() {
   const { activeDrop, loading } = useDrop();
   const [gender] = useSessionGenderFilter();
   const shopLink = gender
@@ -50,12 +50,7 @@ export default function BestsellersStrip({ onAddToCart, onCustomize }) {
         <div className="bestsellers-strip__track" ref={trackRef}>
           {products.map((product) => (
             <div key={product.id} className="bestsellers-strip__card">
-              <ProductCard
-                product={product}
-                gender={gender}
-                onAddToCart={onAddToCart}
-                onCustomize={onCustomize}
-              />
+              <ProductCard product={product} gender={gender} />
             </div>
           ))}
         </div>
