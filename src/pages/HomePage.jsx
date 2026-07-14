@@ -4,6 +4,7 @@ import CategoryGrid from '../components/CategoryGrid';
 import ProductGrid from '../components/ProductGrid';
 import EditorialSplit from '../components/EditorialSplit';
 import BestsellersStrip from '../components/BestsellersStrip';
+import InstagramStrip from '../components/InstagramStrip';
 
 /* ============================================================
    MMAI — HOME PAGE
@@ -21,6 +22,7 @@ export default function HomePage() {
       <ProductGrid />
       <EditorialSplit />
       <BestsellersStrip />
+      <InstagramStrip />
     </>
   );
 }

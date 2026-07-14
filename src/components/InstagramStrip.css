@@ -1,0 +1,124 @@
+.instagram-strip {
+  padding: var(--space-lg) 0 0;
+  background: var(--color-offwhite);
+}
+
+.instagram-strip__header {
+  margin-bottom: var(--space-md);
+  padding: 0 var(--gutter);
+  text-align: center;
+}
+
+.instagram-strip__eyebrow {
+  margin-bottom: 6px;
+  color: var(--color-slate);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.instagram-strip__handle {
+  color: var(--color-black);
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.instagram-strip__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2px;
+  background: var(--color-nude-light);
+}
+
+.instagram-strip__tile {
+  position: relative;
+  display: flex;
+  aspect-ratio: 1 / 1;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.instagram-strip__tile--1 {
+  background: linear-gradient(135deg, #8a8378, #5f5a52);
+}
+
+.instagram-strip__tile--2 {
+  background: linear-gradient(135deg, #6e4e3a, #4a362a);
+}
+
+.instagram-strip__tile--3 {
+  background: linear-gradient(135deg, #948c7e, #625c50);
+}
+
+.instagram-strip__tile--4 {
+  background: linear-gradient(135deg, #857d70, #57524a);
+}
+
+.instagram-strip__tile--5 {
+  background: linear-gradient(135deg, #7a7268, #4f4a42);
+}
+
+.instagram-strip__tile--6 {
+  background: linear-gradient(135deg, #8a644c, #6e4e3a);
+}
+
+.instagram-strip__placeholder {
+  color: rgba(255, 255, 255, 0.35);
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+}
+
+.instagram-strip__overlay {
+  display: none;
+}
+
+.instagram-strip__heart {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: var(--color-warm-white);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.instagram-strip__callout {
+  padding: 20px var(--gutter);
+  background: var(--color-nude-primary);
+  color: var(--color-warm-white);
+  font-family: var(--font-body);
+  font-size: 13px;
+  text-align: center;
+}
+
+@media (min-width: 769px) {
+  .instagram-strip__overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(9, 9, 15, 0.55);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  .instagram-strip__tile:hover .instagram-strip__overlay {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .instagram-strip__handle {
+    font-size: 18px;
+  }
+
+  .instagram-strip__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
