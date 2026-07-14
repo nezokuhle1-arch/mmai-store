@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import DrawerMenu from './DrawerMenu';
 import './NavBar.css';
@@ -7,20 +7,16 @@ import './NavBar.css';
 /* ============================================================
    MMAI — NAV BAR
    Fixed overlay, rendered once at the App level so it persists
-   across every route. Transparent on the homepage (overlays the
-   Hero image); gets a dark backdrop everywhere else for legibility
-   against off-white page backgrounds.
+   across every route. Fully transparent, with text and icon shadows
+   providing legibility over every page background.
    ============================================================ */
 
 export default function NavBar() {
   const { items } = useCart();
-  const location = useLocation();
   const navigate = useNavigate();
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-
-  const isHome = location.pathname === '/';
 
   const handleMenuClick = () => {
     setIsDrawerOpen(true);
@@ -33,7 +29,7 @@ export default function NavBar() {
   };
 
   return (
-    <nav className={`navbar ${!isHome ? 'navbar--backdrop' : ''}`}>
+    <nav className="navbar">
       <div className="navbar__hamburger" onClick={handleMenuClick}>
         <span className="navbar__hamburger-line navbar__hamburger-line--full" />
         <span className="navbar__hamburger-line navbar__hamburger-line--short" />
