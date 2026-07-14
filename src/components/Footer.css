@@ -1,0 +1,200 @@
+/* ---------- Section 1 — Email capture ---------- */
+
+.footer__signup {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding: 56px var(--gutter);
+  background: linear-gradient(180deg, var(--color-offwhite) 0%, #8a6a52 50%, var(--color-nude-darkest) 100%);
+}
+
+.footer__signup-left {
+  max-width: 480px;
+}
+
+.footer__headline {
+  margin-bottom: 10px;
+  color: var(--color-warm-white);
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.footer__body-text {
+  color: rgba(250, 250, 247, 0.8);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.footer__pill-form {
+  margin-top: 20px;
+}
+
+.footer__pill {
+  display: flex;
+  align-items: center;
+  width: 340px;
+  max-width: 100%;
+  padding: 4px;
+  border: 1px solid rgba(250, 250, 247, 0.35);
+  border-radius: 32px;
+  background: rgba(250, 250, 247, 0.14);
+}
+
+.footer__pill-input {
+  flex: 1;
+  padding: 12px 18px;
+  border: none;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent !important;
+  background-color: transparent !important;
+  color: var(--color-warm-white);
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.footer__pill-input::placeholder {
+  color: rgba(250, 250, 247, 0.6);
+}
+
+.footer__pill-button {
+  border: none;
+  border-radius: 28px;
+  padding: 12px 24px;
+  background: var(--color-warm-white);
+  color: var(--color-nude-darkest);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.footer__pill-confirmed {
+  flex: 1;
+  padding: 12px 18px;
+  color: var(--color-warm-white);
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.footer__pill-error {
+  margin-top: 8px;
+  color: var(--color-nude-light);
+  font-family: var(--font-mono);
+  font-size: 10px;
+}
+
+/* ---------- Section 2 — Main link grid ---------- */
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 24px;
+  padding: 36px var(--gutter);
+  background: var(--color-nude-darkest);
+  color: var(--color-warm-white);
+}
+
+.footer__wordmark {
+  margin-bottom: 8px;
+  color: var(--color-warm-white);
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.footer__tagline {
+  color: rgba(244, 237, 230, 0.6);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.footer__col-heading {
+  margin-bottom: 10px;
+  color: rgba(244, 237, 230, 0.5);
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.footer__col-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__col-link {
+  margin-bottom: 8px;
+  color: rgba(244, 237, 230, 0.85);
+  font-family: var(--font-body);
+  font-size: 11px;
+}
+
+.footer__col-link:hover {
+  color: var(--color-warm-white);
+}
+
+/* ---------- Section 3 — Bottom bar ---------- */
+
+.footer__bottom-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 16px var(--gutter);
+  border-top: 1px solid rgba(244, 237, 230, 0.15);
+  background: var(--color-nude-darkest);
+}
+
+.footer__bottom-text {
+  color: rgba(244, 237, 230, 0.5);
+  font-family: var(--font-mono);
+  font-size: 9px;
+}
+
+/* ---------- Section 4 — Giant fading wordmark ---------- */
+
+.footer__wordmark-wrap {
+  overflow: hidden;
+  padding-top: 10px;
+  text-align: center;
+  background: var(--color-nude-darkest);
+}
+
+.footer__wordmark-text {
+  display: inline-block;
+  background: linear-gradient(180deg, rgba(244, 237, 230, 0.35) 0%, rgba(74, 54, 42, 0.05) 85%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-family: var(--font-heading);
+  font-size: clamp(90px, 20vw, 200px);
+  font-weight: 600;
+  letter-spacing: -4px;
+  line-height: 0.8;
+  transform: scaleX(1.15);
+  transform-origin: center;
+  white-space: nowrap;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer__col--brand {
+    grid-column: 1 / -1;
+  }
+}

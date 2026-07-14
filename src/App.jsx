@@ -5,6 +5,7 @@ import { DropProvider } from './context/DropContext';
 
 import AnnouncementBar from './components/AnnouncementBar';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 
 import HomePage from './pages/HomePage';
 import ProductListPage from './pages/ProductListPage';
@@ -38,6 +39,7 @@ function AppShell() {
           <Route path="/checkout" element={<CheckoutPage />} />
         </Routes>
       </main>
+      <Footer />
     </>
   );
 }
