@@ -1,0 +1,190 @@
+/* ============================================================
+   MMAI — PRODUCT LIST PAGE
+   Campaign banner + dynamic header + filter bar + product grid.
+   ============================================================ */
+
+/* ---------- Campaign banner ---------- */
+
+.plp-banner {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+}
+
+.plp-banner__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.plp-banner__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(9, 9, 15, 0.15) 0%, rgba(9, 9, 15, 0.55) 100%);
+}
+
+.plp-banner__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  padding: 28px;
+}
+
+.plp-banner__eyebrow {
+  margin-bottom: 8px;
+  color: var(--color-warm-white);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.plp-banner__title {
+  color: var(--color-warm-white);
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 5vw, 44px);
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ---------- Header ---------- */
+
+.plp-header {
+  background: var(--color-offwhite);
+  padding: 28px var(--gutter) 16px;
+}
+
+.plp-header__eyebrow {
+  color: var(--color-slate);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.plp-header__title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.plp-header__title {
+  color: var(--color-black);
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.plp-header__count {
+  border: 1px solid var(--color-nude-light);
+  background: var(--color-warm-white);
+  padding: 6px 12px;
+  color: var(--color-nude-primary);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+.plp-header__scarcity {
+  margin-top: 8px;
+  color: var(--color-slate);
+  font-family: var(--font-heading);
+  font-size: 13px;
+}
+
+/* ---------- Filter bar ---------- */
+
+.plp-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-offwhite);
+  padding: 16px var(--gutter);
+}
+
+.plp-filter-bar__btn {
+  border: 1px solid var(--color-steel);
+  background: transparent;
+  padding: 8px 16px;
+  color: var(--color-slate);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.plp-filter-bar__btn--active {
+  border-color: var(--color-black);
+  background: var(--color-black);
+  color: var(--color-offwhite);
+}
+
+.plp-filter-bar__gender-pill {
+  border: none;
+  background: var(--color-nude-light);
+  padding: 6px 12px;
+  color: var(--color-nude-deep);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* ---------- Product grid ---------- */
+
+.plp-grid {
+  background: var(--color-offwhite);
+  padding: 32px var(--gutter);
+}
+
+.plp-grid__cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.plp-grid__empty {
+  padding: 60px 0;
+  color: var(--color-slate);
+  font-family: var(--font-body);
+  font-size: 13px;
+  text-align: center;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1024px) {
+  .plp-grid__cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .plp-banner {
+    height: 200px;
+  }
+
+  .plp-header {
+    padding: 20px var(--gutter) 12px;
+  }
+
+  .plp-grid__cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
