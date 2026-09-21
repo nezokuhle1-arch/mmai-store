@@ -2,8 +2,17 @@
   position: relative;
   min-height: 90vh;
   overflow: hidden;
-  /* TODO: replace with real campaign photography via background-image or an <img> tag */
+  /* Fallback shown briefly while the image loads, or if it fails to load. */
   background: linear-gradient(160deg, #8a8378 0%, #5f5a52 55%, #4a4640 100%);
+}
+
+.hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
 .hero__gradient-overlay {

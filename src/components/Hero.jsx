@@ -13,6 +13,12 @@ export default function Hero() {
 
   return (
     <section className="hero">
+      <img
+        src="/assets/mmai-hero-banner.png"
+        alt="MMAI campaign banner — model wearing the Drop 001 collection"
+        className="hero__image"
+      />
+
       <div className="hero__gradient-overlay" />
 
       <div className="hero__content">
