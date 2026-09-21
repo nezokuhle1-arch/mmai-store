@@ -1,0 +1,25 @@
+.recommendations-strip {
+  background: var(--color-offwhite);
+  padding: var(--space-xl) var(--gutter);
+}
+
+.recommendations-strip__header {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-slate);
+  margin-bottom: var(--space-md);
+}
+
+.recommendations-strip__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+}
+
+@media (max-width: 768px) {
+  .recommendations-strip__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

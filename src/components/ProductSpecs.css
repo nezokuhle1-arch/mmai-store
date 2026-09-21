@@ -1,0 +1,37 @@
+.product-specs {
+  margin-top: 24px;
+}
+
+.product-specs__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-slate);
+  margin-bottom: 14px;
+}
+
+.product-specs__row {
+  display: flex;
+  justify-content: space-between;
+  padding: 11px 0;
+  border-bottom: 1px solid #EFE9E1;
+}
+
+.product-specs__row:last-child {
+  border-bottom: none;
+}
+
+.product-specs__key {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: #8A8378;
+  letter-spacing: 0.5px;
+}
+
+.product-specs__value {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  color: var(--color-black);
+  font-weight: 600;
+}

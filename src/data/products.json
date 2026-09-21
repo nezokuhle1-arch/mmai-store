@@ -20,7 +20,11 @@
       },
       "barcodeId": { "enabled": true }
     },
-    "image": "/assets/products/hoodie-001.jpg"
+    "image": "/assets/products/hoodie-001.jpg",
+    "fabric": "Recycled Poly-Cotton Blend",
+    "fit": "Oversized",
+    "madeIn": "South Africa",
+    "care": "Cold Wash, Inside Out"
   },
   {
     "id": "cargo-001",
@@ -43,7 +47,11 @@
       },
       "barcodeId": { "enabled": true }
     },
-    "image": "/assets/products/cargo-001.jpg"
+    "image": "/assets/products/cargo-001.jpg",
+    "fabric": "Cotton Twill",
+    "fit": "Relaxed",
+    "madeIn": "South Africa",
+    "care": "Cold Wash, Inside Out"
   },
   {
     "id": "tee-001",
@@ -66,7 +74,11 @@
       },
       "barcodeId": { "enabled": true }
     },
-    "image": "/assets/products/tee-001.jpg"
+    "image": "/assets/products/tee-001.jpg",
+    "fabric": "Cotton Jersey",
+    "fit": "Regular",
+    "madeIn": "South Africa",
+    "care": "Cold Wash, Inside Out"
   },
   {
     "id": "coat-001",
@@ -89,6 +101,10 @@
       },
       "barcodeId": { "enabled": true }
     },
-    "image": "/assets/products/coat-001.jpg"
+    "image": "/assets/products/coat-001.jpg",
+    "fabric": "Wool Blend",
+    "fit": "Oversized",
+    "madeIn": "South Africa",
+    "care": "Cold Wash, Inside Out"
   }
 ]

@@ -1,0 +1,35 @@
+.product-accordion__row {
+  border-top: 1px solid var(--color-steel);
+  border-bottom: 1px solid var(--color-steel);
+  padding: 18px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.product-accordion__section + .product-accordion__section .product-accordion__row {
+  border-top: none;
+}
+
+.product-accordion__label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-black);
+}
+
+.product-accordion__toggle {
+  font-size: 14px;
+  color: var(--color-slate);
+}
+
+.product-accordion__content {
+  font-family: var(--font-alt-body);
+  font-size: 13px;
+  color: var(--color-slate);
+  line-height: 1.8;
+  padding: 0 0 18px 0;
+  max-width: 420px;
+}
