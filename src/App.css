@@ -1,3 +1,9 @@
+/* Homepage: only the pinned announcement bar occupies flow space.
+   The transparent nav overlays the hero, so navbar-height is omitted. */
+.page-content--home {
+  padding-top: var(--announcement-bar-height);
+}
+
 .page-content--offset {
   padding-top: calc(var(--announcement-bar-height) + var(--navbar-height));
 }

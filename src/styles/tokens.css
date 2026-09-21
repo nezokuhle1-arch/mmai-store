@@ -102,7 +102,7 @@
        Shared by AnnouncementBar / NavBar (both fixed/pinned)
        and by the .page-content--offset spacer in App.css. */
     --announcement-bar-height: 36px;
-    --navbar-height: 176px;
+    --navbar-height: 188px;
   }
 
   @media (max-width: 768px) {

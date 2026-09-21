@@ -1,4 +1,9 @@
 .announcement-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 60;
   min-height: var(--announcement-bar-height);
   display: flex;
   align-items: center;

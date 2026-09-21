@@ -6,6 +6,7 @@ import { DropProvider } from './context/DropContext';
 import AnnouncementBar from './components/AnnouncementBar';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 import HomePage from './pages/HomePage';
 import ProductListPage from './pages/ProductListPage';
@@ -29,7 +30,8 @@ function AppShell() {
     <>
       <AnnouncementBar />
       <NavBar />
-      <main className={isHome ? undefined : 'page-content--offset'}>
+      <ScrollToTop />
+      <main className={isHome ? 'page-content--home' : 'page-content--offset'}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/shop" element={<ProductListPage />} />
