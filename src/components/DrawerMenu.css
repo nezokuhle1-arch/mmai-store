@@ -4,6 +4,12 @@
   z-index: 100;
   display: flex;
   pointer-events: none;
+  /* Reset the navbar's inherited text-shadow/-webkit-text-stroke — those
+     exist so nav text stays legible over photographic backgrounds, but
+     DrawerMenu is mounted as a child of <nav> so it inherits them too,
+     showing up as a dark blur/halo behind this panel's plain black text. */
+  text-shadow: none;
+  -webkit-text-stroke-width: 0;
 }
 
 .drawer-menu--open {
