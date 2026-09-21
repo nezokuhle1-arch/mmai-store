@@ -134,3 +134,12 @@
         1px solid var(--color-border-nav) to keep them visually
         distinct from the body background.
      ============================================================ */
+
+  /* ---------- UTILITIES ---------- */
+  .hide-scrollbar {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }

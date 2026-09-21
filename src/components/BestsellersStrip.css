@@ -69,12 +69,6 @@
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   padding-bottom: 8px;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.bestsellers-strip__track::-webkit-scrollbar {
-  display: none;
 }
 
 .bestsellers-strip__card {

@@ -1,35 +1,28 @@
 .pdp {
+  --pdp-col-height: calc(100vh - var(--announcement-bar-height) - var(--navbar-height));
   display: grid;
-  grid-template-columns: 90px 1fr 1fr;
-  min-height: 600px;
+  grid-template-columns: 1fr 1fr;
 }
 
-/* Column 1 — thumbnail rail */
-.pdp__thumbnails {
+/* Column 1 — scrolling image stack */
+.pdp__image-stack {
   background: var(--color-nude-darkest);
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 16px 10px;
+  overflow-y: scroll;
+  height: var(--pdp-col-height);
 }
 
-.pdp__thumbnail {
-  aspect-ratio: 3 / 4;
-  background: var(--color-nude-deep);
-  border: 1px solid rgba(244, 237, 230, 0.2);
-}
-
-.pdp__thumbnail--active {
-  border-color: var(--color-warm-white);
-}
-
-/* Column 2 — main image */
-.pdp__main-image {
-  background: var(--color-nude-darkest);
+.pdp__image-slot {
+  height: 100%;
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 560px;
+}
+
+.pdp__image-slot:not(:last-child) {
+  border-bottom: 2px solid var(--color-offwhite);
 }
 
 .pdp__garment-placeholder {
@@ -45,10 +38,14 @@
   color: var(--color-warm-white);
 }
 
-/* Column 3 — info panel */
+/* Column 2 — sticky info panel */
 .pdp__info {
   background: var(--color-offwhite);
   padding: 48px 40px;
+  position: sticky;
+  top: calc(var(--announcement-bar-height) + var(--navbar-height));
+  align-self: start;
+  height: var(--pdp-col-height);
   overflow-y: auto;
 }
 
@@ -171,12 +168,23 @@
     grid-template-columns: 1fr;
   }
 
-  .pdp__thumbnails {
+  .pdp__image-stack {
     flex-direction: row;
     overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
   }
 
-  .pdp__main-image {
-    min-height: 400px;
+  .pdp__image-slot {
+    flex: 0 0 100%;
+    width: 100%;
+    scroll-snap-align: start;
+  }
+
+  .pdp__info {
+    position: static;
+    top: auto;
+    height: auto;
+    overflow-y: visible;
   }
 }

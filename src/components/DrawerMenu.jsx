@@ -48,7 +48,7 @@ export default function DrawerMenu({ isOpen, onClose }) {
 
   return (
     <div className={`drawer-menu ${isOpen ? 'drawer-menu--open' : ''}`} aria-hidden={!isOpen}>
-      <div className="drawer-menu__panel">
+      <div className="drawer-menu__panel hide-scrollbar">
         <span className="drawer-menu__close" onClick={onClose} aria-label="Close menu">
           ✕
         </span>

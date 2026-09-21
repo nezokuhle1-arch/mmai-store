@@ -47,7 +47,7 @@ export default function BestsellersStrip() {
       </div>
 
       <div className="bestsellers-strip__rail-viewport">
-        <div className="bestsellers-strip__track" ref={trackRef}>
+        <div className="bestsellers-strip__track hide-scrollbar" ref={trackRef}>
           {products.map((product) => (
             <div key={product.id} className="bestsellers-strip__card">
               <ProductCard product={product} gender={gender} />

@@ -51,12 +51,6 @@
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   padding-bottom: 8px;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.product-grid__track::-webkit-scrollbar {
-  display: none;
 }
 
 .product-grid__card {

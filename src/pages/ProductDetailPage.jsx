@@ -93,21 +93,16 @@ export default function ProductDetailPage() {
   return (
     <>
       <div className="pdp">
-        <div className="pdp__thumbnails">
+        <div className="pdp__image-stack hide-scrollbar">
           {/* TODO: wire to real product.images array once multiple angles exist — currently static placeholders */}
           {[0, 1, 2, 3].map((i) => (
-            <div
-              key={i}
-              className={`pdp__thumbnail${i === 0 ? ' pdp__thumbnail--active' : ''}`}
-            />
+            <div key={i} className="pdp__image-slot">
+              <div className="pdp__garment-placeholder">MMAI</div>
+            </div>
           ))}
         </div>
 
-        <div className="pdp__main-image">
-          <div className="pdp__garment-placeholder">MMAI</div>
-        </div>
-
-        <div className="pdp__info">
+        <div className="pdp__info hide-scrollbar">
           <p className="pdp__breadcrumb">
             Shop / {product.category} / {product.title}
           </p>

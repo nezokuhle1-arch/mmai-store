@@ -33,7 +33,7 @@ export default function ProductGrid() {
       </div>
 
       <div className="product-grid__rail-viewport">
-        <div className="product-grid__track" ref={trackRef}>
+        <div className="product-grid__track hide-scrollbar" ref={trackRef}>
           {products.map((product) => (
             <div key={product.id} className="product-grid__card">
               <ProductCard product={product} gender={gender} />
