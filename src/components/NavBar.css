@@ -10,6 +10,13 @@
   align-items: flex-start;
   padding: 20px var(--gutter);
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7), 0 1px 12px rgba(0, 0, 0, 0.4);
+  /* Thin dark stroke on top of the shadow above: the shadow alone was tuned
+     for dark/photographic backgrounds and reads washed out over light
+     off-white sections (e.g. ProductDetailPage's sticky info panel).
+     -webkit-text-stroke is prefixed but has broad support in current
+     Chrome, Safari, Edge, and Firefox (49+) — no fallback needed. */
+  -webkit-text-stroke: 0.75px var(--color-nude-darkest);
+  paint-order: stroke fill;
 }
 
 /* ---------- Hamburger (left) ---------- */
@@ -25,6 +32,9 @@
   height: 1px;
   background: var(--color-warm-white);
   filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.6));
+  /* text-stroke only applies to text — a thin outline via box-shadow
+     keeps these bars visible over light backgrounds too. */
+  box-shadow: 0 0 0 0.5px var(--color-nude-darkest);
 }
 
 .navbar__hamburger-line--full {
@@ -74,12 +84,16 @@
   text-transform: uppercase;
   text-align: right;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7), 0 1px 12px rgba(0, 0, 0, 0.4);
+  -webkit-text-stroke: 0.75px var(--color-nude-darkest);
+  paint-order: stroke fill;
 }
 
 .search-input::placeholder {
   color: var(--color-warm-white);
   opacity: 0.7;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7), 0 1px 12px rgba(0, 0, 0, 0.4);
+  -webkit-text-stroke: 0.75px var(--color-nude-darkest);
+  paint-order: stroke fill;
 }
 
 .navbar__links {
@@ -104,6 +118,8 @@
   font-size: 9px;
   margin-left: 6px;
   filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.6));
+  -webkit-text-stroke: 0.75px var(--color-nude-darkest);
+  paint-order: stroke fill;
 }
 
 @media (max-width: 768px) {
