@@ -2,6 +2,8 @@
 -- MMAI — AUTH LINKAGE, PREFERENCES, MEMBERSHIP TIER, AND RLS
 -- Run this in the Supabase SQL editor, AFTER 001_customers_and_barcode.sql
 -- has already been run. This does not replace that file — it extends it.
+-- Then run 003_harden_customers_auth.sql. It hardens grants, tier checks,
+-- and barcode recovery.
 -- ============================================================
 
 -- 1. Link customers to Supabase's built-in auth.users table
