@@ -1,0 +1,382 @@
+.create-account {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+/* ---------- LEFT COLUMN ---------- */
+
+.create-account__left {
+  position: relative;
+  background: #171310;
+  padding: 32px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.create-account__left::before {
+  content: '';
+  position: absolute;
+  width: min(440px, 85%);
+  height: min(440px, 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(186, 152, 130, 0.45) 0%,
+    rgba(138, 100, 76, 0.18) 40%,
+    transparent 72%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.create-account__left > * {
+  position: relative;
+  z-index: 1;
+}
+
+.create-account__left .identity-card {
+  width: 100%;
+}
+
+.tier-toggle {
+  display: flex;
+  border: 1px solid rgba(244, 237, 230, 0.25);
+  margin-bottom: 20px;
+}
+
+.tier-toggle__tab {
+  border: none;
+  background: transparent;
+  color: rgba(244, 237, 230, 0.5);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.tier-toggle__tab--active {
+  background: var(--color-warm-white);
+  color: var(--color-nude-darkest);
+}
+
+.benefit-copy {
+  margin-top: 20px;
+  max-width: 380px;
+  text-align: center;
+}
+
+.benefit-copy__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #DECEC4;
+}
+
+.benefit-copy__title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 16px;
+  color: #F4EDE6;
+  margin-top: 4px;
+}
+
+.benefit-copy__description {
+  font-family: var(--font-alt-body);
+  font-size: 11px;
+  color: rgba(244, 237, 230, 0.65);
+  line-height: 1.6;
+  margin-top: 8px;
+}
+
+/* ---------- RIGHT COLUMN ---------- */
+
+.create-account__right {
+  background: #FAFAF7;
+  padding: 24px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.create-account__step-indicator {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--color-slate);
+}
+
+.create-account__title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(22px, 2.2vw, 26px);
+  color: var(--color-black);
+  font-style: italic;
+  margin-top: 6px;
+}
+
+.create-account__subtitle {
+  font-family: var(--font-alt-body);
+  font-size: 12px;
+  color: var(--color-slate);
+  margin-top: 4px;
+}
+
+.create-account__divider {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 14px 0;
+}
+
+.field-group {
+  margin-bottom: 12px;
+}
+
+.field-group__label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-slate);
+  margin-bottom: 6px;
+}
+
+.field-group__input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-steel);
+  font-family: var(--font-body);
+  font-size: 13px;
+  padding: 8px 0;
+  outline: none;
+  color: var(--color-black);
+}
+
+.create-account__error {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #C0392B;
+  margin-top: -8px;
+  margin-bottom: 16px;
+}
+
+.create-account__submit {
+  width: 100%;
+  background: var(--color-nude-primary);
+  color: var(--color-warm-white);
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 13px;
+  border: none;
+  margin-top: 14px;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.create-account__submit:hover {
+  background: var(--color-nude-deep);
+}
+
+.create-account__login-link,
+.create-account__skip-link {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--color-slate);
+  text-align: center;
+  margin-top: 16px;
+  cursor: pointer;
+}
+
+.create-account__login-link:hover,
+.create-account__skip-link:hover {
+  color: var(--color-black);
+}
+
+/* ---------- CHIPS (shopping preference, size) ---------- */
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  border: 1px solid var(--color-steel);
+  background: transparent;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-slate);
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.chip--size {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  text-align: center;
+}
+
+.chip:hover {
+  border-color: var(--color-black);
+  color: var(--color-black);
+}
+
+.chip--selected,
+.chip--selected:hover {
+  background: var(--color-black);
+  color: var(--color-offwhite);
+  border-color: var(--color-black);
+}
+
+/* ---------- INTEREST TILES ---------- */
+
+.interest-tiles {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+
+.interest-tile {
+  position: relative;
+  height: 52px;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0;
+}
+
+.interest-tile--hoodies {
+  background: linear-gradient(135deg, #8a8378 0%, #5f5a52 100%);
+}
+
+.interest-tile--cargo-pants {
+  background: linear-gradient(135deg, #7a7268 0%, #4f4a42 100%);
+}
+
+.interest-tile--graphic-tees {
+  background: linear-gradient(135deg, #948c7e 0%, #625c50 100%);
+}
+
+.interest-tile--coats {
+  background: linear-gradient(135deg, #6e4e3a 0%, #4a362a 100%);
+}
+
+.interest-tile--accessories {
+  background: linear-gradient(135deg, #857d70 0%, #57524a 100%);
+}
+
+.interest-tile--selected {
+  box-shadow: inset 0 0 0 2px var(--color-nude-primary);
+}
+
+.interest-tile__label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px;
+  background: linear-gradient(transparent, rgba(9, 9, 15, 0.55));
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-warm-white);
+  text-align: left;
+}
+
+/* ---------- LOADING SCREEN ---------- */
+
+.create-account-loading {
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background: #171310;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.create-account-loading__spinner {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(244, 237, 230, 0.2);
+  border-top-color: #DECEC4;
+  animation: create-account-spin 0.9s linear infinite;
+}
+
+@keyframes create-account-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.create-account-loading__label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #DECEC4;
+}
+
+.create-account-loading__sublabel {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  color: #F4EDE6;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 768px) {
+  /* The no-scroll treatment is a desktop-viewport requirement (the two
+     columns share one screen there). Stacked on mobile, left + right
+     column content routinely exceeds one viewport's height, so this
+     breakpoint switches back to a normal scrolling page instead of
+     clipping content with the desktop's height:100vh + overflow:hidden. */
+  .create-account {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-y: auto;
+  }
+
+  .create-account__left {
+    min-height: auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  .create-account__left .identity-card,
+  .create-account__left .benefit-copy {
+    max-width: 280px;
+  }
+
+  .create-account__left .identity-card {
+    margin: 0 auto;
+  }
+
+  .create-account__right {
+    overflow: visible;
+    padding-bottom: 40px;
+  }
+}

@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   z-index: 50;
-  background: none;
+  background: var(--color-nude-primary);
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: flex-start;
@@ -17,6 +17,10 @@
      Chrome, Safari, Edge, and Firefox (49+) — no fallback needed. */
   -webkit-text-stroke: 0.75px var(--color-nude-darkest);
   paint-order: stroke fill;
+}
+
+.navbar--transparent {
+  background: none;
 }
 
 /* ---------- Hamburger (left) ---------- */
@@ -109,6 +113,14 @@
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-warm-white);
+}
+
+.navbar__link--button {
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: right;
+  cursor: pointer;
 }
 
 .navbar__badge {

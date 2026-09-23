@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import { useSessionGenderFilter } from '../hooks/useSessionGenderFilter';
 import './DrawerMenu.css';
 
@@ -18,7 +19,13 @@ const CATEGORIES = [
 ];
 
 export default function DrawerMenu({ isOpen, onClose }) {
+  const { session, openIdentityDrawer } = useAuth();
   const [gender, setGender] = useSessionGenderFilter();
+
+  const handleIdentityClick = () => {
+    onClose();
+    openIdentityDrawer();
+  };
 
   useEffect(() => {
     if (!isOpen) return undefined;
@@ -85,6 +92,9 @@ export default function DrawerMenu({ isOpen, onClose }) {
           <Link to="/about" className="drawer-menu__link" onClick={onClose}>
             Our Story
           </Link>
+          <span className="drawer-menu__link" onClick={handleIdentityClick}>
+            {session ? 'My Identity' : 'Log In'}
+          </span>
         </div>
 
         <div className="drawer-menu__categories">

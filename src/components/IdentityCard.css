@@ -1,0 +1,127 @@
+.identity-card {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  height: 215px;
+  border-radius: 12px;
+  padding: 24px;
+  overflow: hidden;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease;
+  background-image:
+    repeating-linear-gradient(115deg, rgba(255, 255, 255, 0.07) 0px, rgba(255, 255, 255, 0.07) 1.5px, transparent 1.5px, transparent 6px),
+    repeating-linear-gradient(115deg, rgba(0, 0, 0, 0.16) 0px, rgba(0, 0, 0, 0.16) 1px, transparent 1px, transparent 6px);
+}
+
+.identity-card--self {
+  background-color: var(--color-tier-self);
+}
+
+.identity-card--maison {
+  background-color: var(--color-tier-maison);
+}
+
+.identity-card__top-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.identity-card__member-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.identity-card--self .identity-card__member-label {
+  color: rgba(74, 54, 42, 0.6);
+}
+
+.identity-card--maison .identity-card__member-label {
+  color: rgba(244, 237, 230, 0.6);
+}
+
+.identity-card__monogram {
+  width: 80px;
+  display: block;
+  margin: 8px auto;
+}
+
+.identity-card--self .identity-card__monogram {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35)) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.25));
+}
+
+.identity-card--maison .identity-card__monogram {
+  mix-blend-mode: screen;
+  opacity: 0.95;
+}
+
+.identity-card__wordmark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+}
+
+.identity-card--self .identity-card__wordmark {
+  color: #2A2420;
+}
+
+.identity-card--maison .identity-card__wordmark {
+  color: #F4EDE6;
+}
+
+.identity-card__name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.identity-card--self .identity-card__name {
+  color: #6E4E3A;
+}
+
+.identity-card--maison .identity-card__name {
+  color: #DECEC4;
+}
+
+.identity-card__name--muted {
+  opacity: 0.5;
+}
+
+.identity-card__barcode {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+.identity-card--self .identity-card__barcode {
+  color: #8A644C;
+}
+
+.identity-card--maison .identity-card__barcode {
+  color: #C4A987;
+}
+
+.identity-card__tier-badge {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 2px;
+  padding: 4px 9px;
+  text-transform: uppercase;
+}
+
+.identity-card--self .identity-card__tier-badge {
+  color: #6E4E3A;
+  background: rgba(74, 54, 42, 0.12);
+}
+
+.identity-card--maison .identity-card__tier-badge {
+  color: #DECEC4;
+  background: rgba(244, 237, 230, 0.12);
+}

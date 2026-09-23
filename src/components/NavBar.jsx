@@ -1,18 +1,21 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
 import DrawerMenu from './DrawerMenu';
 import './NavBar.css';
 
 /* ============================================================
    MMAI — NAV BAR
    Fixed overlay, rendered once at the App level so it persists
-   across every route. Fully transparent, with text and icon shadows
-   providing legibility over every page background.
+   across every route. Transparent on the homepage (over the hero);
+   solid nude background everywhere else. Text/icon shadows aid legibility
+   when transparent.
    ============================================================ */
 
-export default function NavBar() {
+export default function NavBar({ transparent = false }) {
   const { items } = useCart();
+  const { session, openIdentityDrawer } = useAuth();
   const navigate = useNavigate();
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -29,7 +32,7 @@ export default function NavBar() {
   };
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar${transparent ? ' navbar--transparent' : ''}`}>
       <div className="navbar__hamburger" onClick={handleMenuClick}>
         <span className="navbar__hamburger-line navbar__hamburger-line--full" />
         <span className="navbar__hamburger-line navbar__hamburger-line--short" />
@@ -57,9 +60,9 @@ export default function NavBar() {
             Bag
             <span className="navbar__badge">{items.length}</span>
           </Link>
-          <Link to="/account" className="navbar__link">
-            Log In
-          </Link>
+          <button type="button" className="navbar__link navbar__link--button" onClick={openIdentityDrawer}>
+            {session ? 'My Identity' : 'Log In'}
+          </button>
           <Link to="/help" className="navbar__link navbar__link--help">
             Help
           </Link>

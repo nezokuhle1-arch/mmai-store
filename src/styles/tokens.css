@@ -33,6 +33,9 @@
   
     --color-steel:         #B0B4BC;  /* borders, dividers on light surfaces   */
     --color-slate:         #6A7180;  /* muted body text, placeholders         */
+
+    --color-tier-self:     #C4C0BA;  /* SELF membership card background       */
+    --color-tier-maison:   #2A1E16;  /* MAISON DU SELF membership card bg     */
   
     /* ---------- SEMANTIC ALIASES ---------- */
     --color-bg:               var(--color-offwhite);
@@ -55,7 +58,7 @@
     --color-cta-text-inverse: var(--color-nude-primary);
   
     /* ---------- TYPOGRAPHY ---------- */
-    --font-display:  'Playfair Display', serif;  /* NAV WORDMARK ONLY — "MMAI." — nowhere else */
+    --font-display:  'Playfair Display', serif;  /* NAV WORDMARK + the "MMAI." logo mark reused on the identity card and account sign-in panel — no other use */
     --font-heading:  'Fraunces', serif;           /* section headings, hero headline, product titles */
     --font-body:     'DM Sans', sans-serif;       /* UI, prices, nav links, buttons        */
     --font-alt-body: 'Inter', sans-serif;         /* paragraph / body copy, descriptions   */
